@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CAVU Music - Sought after touring band and live performance artists">
+    <title>CAVU Music | Live Performance & Touring</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           MODERN DARK MUSIC INDUSTRY AESTHETIC
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color Palette */
+            --black: #0A0A0A;
+            --dark-surface: #111115;
+            --accent-cyan: #00F0FF;
+            --accent-purple: #9333EA;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-muted: #6B7280;
+            
+            /* Spacing */
+            --section-padding: 80px 20px;
+            --container-max: 1200px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--black);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ============================================
+           CONTAINER & LAYOUT
+           ============================================ */
+        
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+        
+        /* ============================================
+           HERO SECTION - "THE FIRST 5 SECONDS"
+           ============================================ */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1a0a2e 100%);
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 0;
+        }
+        
+        /* Fallback gradient overlay if no hero image */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(147, 51, 234, 0.08) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 20px;
+        }
+        
+        .hero-logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.3));
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+        
+        .hero-tagline {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: var(--black);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--accent-cyan);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(0, 240, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3); }
+            50% { box-shadow: 0 15px 50px rgba(0, 240, 255, 0.5); }
+        }
+        
+        /* Social Links in Hero */
+        .hero-social {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 24px;
+        }
+        
+        .social-icon:hover {
+            background: var(--accent-cyan);
+            color: var(--black);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.4);
+        }
+        
+        .social-icon i {
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover i {
+            transform: scale(1.1);
+        }
+        
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        
+        .about {
+            background: var(--dark-surface);
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 240, 255, 0.2);
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* ============================================
+           MUSIC/AUDIO SECTION
+           ============================================ */
+        
+        .music {
+            background: var(--black);
+        }
+        
+        .audio-player-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        
+        .player-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+            text-align: center;
+        }
+        
+        .embed-placeholder {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 60px 20px;
+            text-align: center;
+            border: 2px dashed rgba(0, 240, 255, 0.3);
+        }
+        
+        .embed-instructions {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .embed-instructions strong {
+            color: var(--accent-cyan);
+            display: block;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* Music Platform Grid */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .platform-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .platform-card:hover {
+            background: rgba(0, 240, 255, 0.05);
+            border-color: var(--accent-cyan);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 240, 255, 0.2);
+        }
+        
+        .platform-icon {
+            font-size: 3rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .platform-card:hover .platform-icon {
+            color: var(--accent-cyan);
+            transform: scale(1.1);
+        }
+        
+        .platform-name {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* ============================================
+           VIDEO SECTION
+           ============================================ */
+        
+        .videos {
+            background: var(--dark-surface);
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .video-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.2);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .video-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        /* ============================================
+           ROSTER/GALLERY SECTION
+           ============================================ */
+        
+        .roster {
+            background: var(--black);
+        }
+        
+        .band-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .band-member {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .band-member:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 240, 255, 0.05);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.2);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+        }
+        
+        .member-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+        
+        .member-role {
+            color: var(--accent-cyan);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* ============================================
+           BOOKING/CONTACT SECTION
+           ============================================ */
+        
+        .contact {
+            background: var(--dark-surface);
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .booking-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            background: rgba(0, 240, 255, 0.05);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: var(--black);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.5);
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        
+        footer {
+            background: var(--black);
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 60px 20px;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-social {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .booking-form {
+                padding: 30px 20px;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .band-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ============================================
+           SMOOTH SCROLL BEHAVIOR
+           ============================================ */
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading Animation for Images */
+        img {
+            transition: opacity 0.3s ease;
+        }
+        
+        img[src=""] {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="home">
+        <!-- Hero Background: Replace 'hero-bg.mp4' or 'hero-bg.jpg' with your actual video/image -->
+        <!-- For Video: <video class="hero-bg" autoplay muted loop playsinline><source src="hero-bg.mp4" type="video/mp4"></video> -->
+        <img src="hero-bg.jpg" alt="CAVU Music performs live on stage - Replace with high-resolution band photo 1920x1080px" class="hero-bg">
+        
+        <div class="hero-content">
+            <!-- Logo (Optional) -->
+            <!-- <img src="logo.png" alt="CAVU Music Logo - Replace with your logo file" class="hero-logo"> -->
+            
+            <h1>CAVU MUSIC</h1>
+            <p class="hero-tagline">High Energy Live Entertainment | Authentic sound</p>
+            
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">Book Us Now</a>
+                <a href="#music" class="btn btn-secondary">Listen to Our Music</a>
+            </div>
+            
+            <div class="hero-social">
+                <!-- Facebook -->
+                <a href="https://facebook.com/YOURPAGE" target="_blank" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://youtube.com/@YOURUSERNAME" target="_blank" class="social-icon" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+                <!-- Spotify -->
+                <a href="https://open.spotify.com/artist/YOURARTISTID" target="_blank" class="social-icon" aria-label="Spotify">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                
+                <!-- iTunes/Apple Music -->
+                <a href="https://music.apple.com/artist/YOURARTISTID" target="_blank" class="social-icon" aria-label="iTunes">
+                    <i class="fab fa-apple"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About CAVU Music</h2>
+            <div class="about-content">
+                <img src="band-photo.jpg" alt="CAVU Music band members - Replace with professional band photo 1200x800px" class="about-image">
+                
+                <p class="about-text">
+                    CAVU Music delivers unforgettable live performances that energize audiences and create lasting memories. Intimate venues. Major festivals. Same dedication. We keep the focus where it belongs: on the music and a live experience that people truly enjoy.
+                </p>
+                
+                <p class="about-text">
+                    From local stages to festival lineups, we’ve built our reputation on a simple goal: delivering a great show every time. Our high-energy sets and musical versatility have made us a sought-after choice for promoters and fans who just want a night of great music.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         MUSIC/AUDIO SECTION
+         ============================================ -->
+    <section class="music" id="music">
+        <div class="container">
+            <h2 class="section-title">Listen to Our Music</h2>
+            
+            <div class="audio-player-container">
+                <p class="player-title">Latest Tracks</p>
+                
+                <!-- SPOTIFY EMBED PLACEHOLDER -->
+                <!-- To add your music: Go to Spotify > Find your artist/album/playlist > Click "Share" > "Embed" > Copy the iframe code and paste it below -->
+                <div class="embed-placeholder">
+                    <p class="embed-instructions">
+                        📻 Your Spotify embed will appear here
+                        <br><br>
+                        <strong>How to add:</strong>
+                        <br>
+                        1. Open Spotify and find your artist page, album, or playlist
+                        <br>
+                        2. Click the "..." menu and select "Share" → "Embed track/album/playlist"
+                        <br>
+                        3. Copy the iframe code that Spotify provides
+                        <br>
+                        4. Paste it in this HTML file where you see this placeholder
+                        <br><br>
+                        Example code:
+                        <br>
+                        &lt;iframe style="border-radius:12px" src="https://open.spotify.com/embed/..." width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"&gt;&lt;/iframe&gt;
+                    </p>
+                </div>
+                
+                <!-- PASTE YOUR SPOTIFY EMBED CODE BELOW THIS LINE -->
+                
+                <!-- PASTE YOUR SPOTIFY EMBED CODE ABOVE THIS LINE -->
+            </div>
+            
+            <!-- Music Download Platforms -->
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: var(--text-primary);">
+                    Download Our Music
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 1.1rem;">
+                    We are also available for digital download at these fine services:
+                </p>
+                
+                <div class="platform-grid">
+                    <!-- iTunes / Apple Music -->
+                    <a href="https://music.apple.com/artist/YOURARTISTID" target="_blank" class="platform-card">
+                        <i class="fab fa-apple platform-icon"></i>
+                        <span class="platform-name">iTunes</span>
+                    </a>
+                    
+                    <!-- Amazon MP3 -->
+                    <a href="https://music.amazon.com/artists/YOURARTISTID" target="_blank" class="platform-card">
+                        <i class="fab fa-amazon platform-icon"></i>
+                        <span class="platform-name">Amazon MP3</span>
+                    </a>
+                    
+                    <!-- Spotify -->
+                    <a href="https://open.spotify.com/artist/YOURARTISTID" target="_blank" class="platform-card">
+                        <i class="fab fa-spotify platform-icon"></i>
+                        <span class="platform-name">Spotify</span>
+                    </a>
+                    
+                    <!-- YouTube Music -->
+                    <a href="https://music.youtube.com/channel/YOURCHANNELID" target="_blank" class="platform-card">
+                        <i class="fab fa-youtube platform-icon"></i>
+                        <span class="platform-name">YouTube Music</span>
+                    </a>
+                    
+                    <!-- Bandcamp -->
+                    <a href="https://YOURNAME.bandcamp.com" target="_blank" class="platform-card">
+                        <i class="fab fa-bandcamp platform-icon"></i>
+                        <span class="platform-name">Bandcamp</span>
+                    </a>
+                    
+                    <!-- SoundCloud -->
+                    <a href="https://soundcloud.com/YOURNAME" target="_blank" class="platform-card">
+                        <i class="fab fa-soundcloud platform-icon"></i>
+                        <span class="platform-name">SoundCloud</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         VIDEO SECTION
+         ============================================ -->
+    <section class="videos" id="videos">
+        <div class="container">
+            <h2 class="section-title">Watch Us Perform</h2>
+            
+            <div class="video-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <img src="video-thumb-1.jpg" alt="Performance video thumbnail - Replace with screenshot 640x360px" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">Live at [Venue Name]</h3>
+                        <p class="video-description">Live performance from our recent tour stop.</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <img src="video-thumb-2.jpg" alt="Performance video thumbnail - Replace with screenshot 640x360px" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">Behind the Scenes</h3>
+                        <p class="video-description">Scenes from the stage and beyond.</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <img src="video-thumb-3.jpg" alt="Performance video thumbnail - Replace with screenshot 640x360px" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">Latest Music Video</h3>
+                        <p class="video-description">Check out our newest release.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://youtube.com/@YOURUSERNAME" target="_blank" class="btn btn-secondary">View All Videos</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         BAND ROSTER SECTION
+         ============================================ -->
+    <section class="roster" id="roster">
+        <div class="container">
+            <h2 class="section-title">Meet the Band</h2>
+            
+            <div class="band-grid">
+                <!-- Ken -->
+                <div class="band-member">
+                    <img src="ken.jpg" alt="Ken - Acoustic Guitar and Vocals - Replace with headshot 400x400px" class="member-photo">
+                    <h3 class="member-name">Ken</h3>
+                    <p class="member-role">Acoustic Guitar, Vocals</p>
+                </div>
+                
+                <!-- Peggie -->
+                <div class="band-member">
+                    <img src="peggie.jpg" alt="Peggie - Vocals, Keyboards, Harmonicas, Percussion - Replace with headshot 400x400px" class="member-photo">
+                    <h3 class="member-name">Peggie</h3>
+                    <p class="member-role">Vocals, Keyboards, Harmonicas, Percussion</p>
+                </div>
+                
+                <!-- Bonnie -->
+                <div class="band-member">
+                    <img src="bonnie.jpg" alt="Bonnie - Violin and Vocals - Replace with headshot 400x400px" class="member-photo">
+                    <h3 class="member-name">Bonnie</h3>
+                    <p class="member-role">Violin, Vocals</p>
+                </div>
+                
+                <!-- Mark -->
+                <div class="band-member">
+                    <img src="mark.jpg" alt="Mark - Cello - Replace with headshot 400x400px" class="member-photo">
+                    <h3 class="member-name">Mark</h3>
+                    <p class="member-role">Cello</p>
+                </div>
+                
+                <!-- Gerry -->
+                <div class="band-member">
+                    <img src="gerry.jpg" alt="Gerry - Mandolin, Mandocello, Bass - Replace with headshot 400x400px" class="member-photo">
+                    <h3 class="member-name">Gerry</h3>
+                    <p class="member-role">Mandolin, Mandocello, Bass</p>
+                </div>
+                
+                <!-- Jimmy -->
+                <div class="band-member">
+                    <img src="jimmy.jpg" alt="Jimmy - Drums and Banjo - Replace with headshot 400x400px" class="member-photo">
+                    <h3 class="member-name">Jimmy</h3>
+                    <p class="member-role">Drums, Banjo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         BOOKING/CONTACT SECTION
+         ============================================ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Book Us for Your Event</h2>
+            
+            <div class="contact-content">
+                <p class="about-text">
+                    Interested in booking CAVU Music for your venue or event? Contact Peggie Balcom directly or fill out the form below.
+                </p>
+                
+                <div style="text-align: center; margin: 30px 0; padding: 25px; background: rgba(0, 240, 255, 0.05); border-radius: 15px; border: 1px solid rgba(0, 240, 255, 0.2);">
+                    <p style="font-size: 1.3rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 15px;">Direct Booking Contact</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 8px;">
+                        <a href="tel:4802424867" style="color: var(--text-primary); text-decoration: none; transition: color 0.3s;">
+                            📞 (480) 242-4867
+                        </a>
+                    </p>
+                    <p style="font-size: 1.2rem;">
+                        <a href="mailto:cavu@cavumusic.com" style="color: var(--text-primary); text-decoration: none; transition: color 0.3s;">
+                            ✉️ cavu@cavumusic.com
+                        </a>
+                    </p>
+                </div>
+                
+                <form class="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <!-- Replace YOUR_FORM_ID above with your actual Formspree ID or email service endpoint -->
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event">Event Details *</label>
+                        <textarea id="event" name="message" placeholder="Tell us about your event: date, venue, expected attendance, type of event..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Booking Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://facebook.com/YOURPAGE" target="_blank" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://youtube.com/@YOURUSERNAME" target="_blank" class="social-icon" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://open.spotify.com/artist/YOURARTISTID" target="_blank" class="social-icon" aria-label="Spotify">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                <a href="https://music.apple.com/artist/YOURARTISTID" target="_blank" class="social-icon" aria-label="iTunes">
+                    <i class="fab fa-apple"></i>
+                </a>
+            </div>
+            
+            <p class="footer-text">
+                © 2024 CAVU Music. All rights reserved. | Live Entertainment | Local shows and late nights 
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple form submission handler (optional - enhances user experience)
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            // If you're using Formspree or another service, they'll handle the submission
+            // This just adds a small UX enhancement
+            const btn = this.querySelector('.submit-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            // Re-enable after 3 seconds (actual submission happens via form action)
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 3000);
+        });
+    </script>
+    
+</body>
+</html>
