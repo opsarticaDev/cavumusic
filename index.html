@@ -317,6 +317,13 @@
             margin: 0 auto;
         }
         
+        @media (max-width: 768px) {
+            .platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        
         .platform-card {
             display: flex;
             flex-direction: column;
@@ -417,9 +424,16 @@
         
         .band-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .band-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
         }
         
         .band-member {
@@ -617,10 +631,6 @@
             .video-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .band-grid {
-                grid-template-columns: 1fr;
-            }
         }
         
         /* ============================================
@@ -701,7 +711,7 @@
                 </p>
                 
                 <p class="about-text">
-                    From local stages to festival lineups, we’ve built our reputation on a simple goal: delivering a great show every time. Our high-energy sets and musical versatility have made us a sought-after choice for promoters and fans who just want a night of great music.
+                    From local stages to festival lineups, we've built our reputation on a simple goal: delivering a great show every time. Our high-energy sets and musical versatility have made us a sought-after choice for promoters and fans who just want a night of great music.
                 </p>
             </div>
         </div>
@@ -807,7 +817,7 @@
                     <img src="video-thumb-1.jpg" alt="Performance video thumbnail - Replace with screenshot 640x360px" class="video-thumbnail">
                     <div class="video-info">
                         <h3 class="video-title">Live at [Venue Name]</h3>
-                        <p class="video-description">Live performance from our recent tour stop.</p>
+                        <p class="video-description">Epic performance from our recent tour stop.</p>
                     </div>
                 </div>
                 
@@ -816,7 +826,7 @@
                     <img src="video-thumb-2.jpg" alt="Performance video thumbnail - Replace with screenshot 640x360px" class="video-thumbnail">
                     <div class="video-info">
                         <h3 class="video-title">Behind the Scenes</h3>
-                        <p class="video-description">Scenes from the stage and beyond.</p>
+                        <p class="video-description">A glimpse into life on the road.</p>
                     </div>
                 </div>
                 
@@ -965,7 +975,7 @@
             </div>
             
             <p class="footer-text">
-                © 2024 CAVU Music. All rights reserved. | Live Entertainment | Local shows and late nights 
+                © 2024 CAVU Music. All rights reserved. | Professional Touring & Live Entertainment
             </p>
         </div>
     </footer>
